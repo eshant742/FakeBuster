@@ -104,17 +104,17 @@ function ThreatGauge({ score }: { score: number }) {
   return (
     <div className="flex flex-col items-center shrink-0">
       <svg viewBox="0 0 120 120" className="w-24 h-24 sm:w-28 sm:h-28">
-        <circle cx="60" cy="60" r="45" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="8" />
+        <circle cx="60" cy="60" r="45" fill="none" stroke="rgba(0,0,0,0.05)" strokeWidth="8" />
         <circle
           cx="60" cy="60" r="45" fill="none" stroke={color} strokeWidth="8"
           strokeDasharray={C} strokeDashoffset={offset}
           strokeLinecap="round" transform="rotate(-90 60 60)"
           style={{ transition: "stroke-dashoffset 1s ease-out, stroke 0.5s ease" }}
         />
-        <text x="60" y="53" textAnchor="middle" dominantBaseline="central" fill="white" fontSize="26" fontWeight="bold">{score}</text>
-        <text x="60" y="75" textAnchor="middle" fill="#71717a" fontSize="10">/ 100</text>
+        <text x="60" y="53" textAnchor="middle" dominantBaseline="central" fill="#0f172a" fontSize="26" fontWeight="bold">{score}</text>
+        <text x="60" y="75" textAnchor="middle" fill="#64748b" fontSize="10">/ 100</text>
       </svg>
-      <p className="text-[10px] text-zinc-600 mt-0.5 tracking-wider uppercase">Threat Score</p>
+      <p className="text-[10px] text-slate-500 mt-0.5 tracking-wider uppercase">Threat Score</p>
     </div>
   );
 }
@@ -196,17 +196,17 @@ export default function FakeBusterDashboard() {
      RENDER
      ═══════════════════════════════════════════ */
   return (
-    <div className="min-h-screen bg-[#050510] text-zinc-100 font-sans selection:bg-violet-500/30">
+    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-violet-500/20">
       {/* ── Animated Background ── */}
       <div className="fixed inset-0 pointer-events-none" aria-hidden="true">
-        <div className="absolute inset-0 bg-gradient-to-br from-violet-950/30 via-transparent to-cyan-950/20 animate-gradient-shift" />
-        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-violet-600/[0.04] rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-cyan-600/[0.04] rounded-full blur-3xl" />
+        <div className="absolute inset-0 bg-gradient-to-br from-violet-100/40 via-transparent to-cyan-100/30 animate-gradient-shift" />
+        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-violet-400/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-cyan-400/10 rounded-full blur-3xl" />
       </div>
 
       <div className="relative z-10">
         {/* ════════ Header ════════ */}
-        <header className="border-b border-white/[0.06] backdrop-blur-xl bg-[#050510]/80 sticky top-0 z-50">
+        <header className="border-b border-slate-200/60 backdrop-blur-xl bg-white/70 sticky top-0 z-50">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="p-2 bg-gradient-to-br from-violet-600 to-cyan-500 rounded-xl shadow-lg shadow-violet-500/20 animate-pulse-ring">
@@ -217,14 +217,14 @@ export default function FakeBusterDashboard() {
                 <p className="text-[9px] text-zinc-500 uppercase tracking-[0.2em] leading-none">AWS Powered</p>
               </div>
             </div>
-            <div className="flex items-center gap-3 text-xs text-zinc-500">
+            <div className="flex items-center gap-3 text-xs text-slate-500">
               {scanCount > 0 && (
-                <span className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/[0.03] border border-white/[0.06]">
-                  <Zap className="w-3 h-3 text-amber-400" />
+                <span className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-100 border border-slate-200">
+                  <Zap className="w-3 h-3 text-amber-500" />
                   {scanCount} scan{scanCount !== 1 && "s"}
                 </span>
               )}
-              <span className="px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[11px]">● Online</span>
+              <span className="px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 text-[11px]">● Online</span>
             </div>
           </div>
         </header>
@@ -232,21 +232,21 @@ export default function FakeBusterDashboard() {
         {/* ════════ Hero ════════ */}
         <section className="pt-10 pb-8 sm:pt-14 sm:pb-10 text-center px-4">
           <div className="animate-fade-in-up">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-300 text-[11px] mb-5">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-violet-100 border border-violet-200 text-violet-700 text-[11px] mb-5">
               <Sparkles className="w-3 h-3" />
               AWS First Commit Hackathon — Bharat Builds Tour 2026
             </div>
-            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight max-w-3xl mx-auto">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight max-w-3xl mx-auto text-slate-900">
               Your AI Shield Against{" "}
               <span className="gradient-text">Digital Deception</span>
             </h2>
-            <p className="mt-3 text-zinc-400 text-sm sm:text-base max-w-lg mx-auto leading-relaxed">
+            <p className="mt-3 text-slate-600 text-sm sm:text-base max-w-lg mx-auto leading-relaxed">
               Detect scams, deepfakes, and phishing in seconds — powered by Amazon Bedrock, S3, and Transcribe.
             </p>
           </div>
           <div className="flex flex-wrap justify-center gap-2 mt-6 animate-fade-in-up" style={{ animationDelay: "0.15s" }}>
             {["Amazon Bedrock", "Amazon S3", "Amazon Transcribe", "AWS Amplify"].map((s) => (
-              <span key={s} className="px-2.5 py-1 text-[10px] rounded-md bg-white/[0.03] border border-white/[0.06] text-zinc-500 tracking-wide">{s}</span>
+              <span key={s} className="px-2.5 py-1 text-[10px] rounded-md bg-white border border-slate-200 text-slate-500 tracking-wide shadow-sm">{s}</span>
             ))}
           </div>
         </section>
@@ -258,11 +258,11 @@ export default function FakeBusterDashboard() {
             {/* ── INPUT PANEL ── */}
             <div className="glass rounded-2xl p-4 sm:p-6 space-y-4">
               {/* Tabs */}
-              <div className="flex gap-1 p-1 rounded-xl bg-white/[0.03] border border-white/[0.04]" role="tablist" aria-label="Analysis type">
+              <div className="flex gap-1 p-1 rounded-xl bg-slate-100 border border-slate-200/50" role="tablist" aria-label="Analysis type">
                 {TABS.map((t) => (
                   <button key={t.id} role="tab" aria-selected={activeTab === t.id} onClick={() => switchTab(t.id)}
                     className={`flex-1 flex items-center justify-center gap-1.5 px-2 py-2.5 rounded-lg text-xs sm:text-sm font-medium transition-all duration-200 ${
-                      activeTab === t.id ? "bg-white/10 text-white shadow-sm" : "text-zinc-500 hover:text-zinc-300 hover:bg-white/[0.03]"
+                      activeTab === t.id ? "bg-white text-violet-700 shadow border border-slate-200/50" : "text-slate-500 hover:text-slate-700 hover:bg-slate-50"
                     }`}>
                     {t.icon}
                     <span className="hidden sm:inline">{t.label}</span>
@@ -270,7 +270,7 @@ export default function FakeBusterDashboard() {
                   </button>
                 ))}
               </div>
-              <p className="text-[11px] text-zinc-600">{TABS.find((t) => t.id === activeTab)?.desc}</p>
+              <p className="text-[11px] text-slate-500">{TABS.find((t) => t.id === activeTab)?.desc}</p>
 
               {/* ── Text Input ── */}
               {activeTab === "text" && (
@@ -280,17 +280,17 @@ export default function FakeBusterDashboard() {
                     value={inputText}
                     onChange={(e) => setInputText(e.target.value)}
                     placeholder="Paste suspicious message, post, or URL here…"
-                    className="w-full h-32 sm:h-36 bg-white/[0.03] border border-white/[0.06] rounded-xl p-4 text-sm text-zinc-200 placeholder:text-zinc-600 focus:outline-none focus:ring-2 focus:ring-violet-500/40 focus:border-violet-500/40 resize-none transition-all"
+                    className="w-full h-32 sm:h-36 bg-white border border-slate-200 rounded-xl p-4 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500 resize-none transition-all shadow-sm"
                     maxLength={5000}
                   />
                   <div className="flex items-center justify-between">
-                    <span className="text-[10px] text-zinc-600">Try a sample ↓</span>
-                    <span className="text-[10px] text-zinc-700">{inputText.length} / 5 000</span>
+                    <span className="text-[10px] text-slate-500">Try a sample ↓</span>
+                    <span className="text-[10px] text-slate-400">{inputText.length} / 5 000</span>
                   </div>
                   <div className="flex flex-wrap gap-1.5">
                     {SAMPLE_SCAMS.map((s) => (
                       <button key={s.label} onClick={() => { setInputText(s.text); setResult(null); }}
-                        className="text-[11px] px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-zinc-400 hover:text-white hover:bg-white/[0.08] hover:border-violet-500/30 transition-all">
+                        className="text-[11px] px-2.5 py-1 rounded-md bg-white border border-slate-200 text-slate-600 hover:text-slate-900 hover:bg-slate-50 hover:border-violet-300 transition-all shadow-sm">
                         {s.label}
                       </button>
                     ))}
@@ -304,18 +304,18 @@ export default function FakeBusterDashboard() {
                   <input ref={fileInputRef} type="file" accept={ACCEPTED_IMAGE_TYPES} onChange={(e) => e.target.files?.[0] && pickFile(e.target.files[0])} className="hidden" id="img-upload" />
                   {!selectedFile ? (
                     <label htmlFor="img-upload" onDrop={onDrop} onDragOver={onDragOver} onDragLeave={onDragLeave}
-                      className={`flex flex-col items-center justify-center h-36 rounded-xl border-2 border-dashed cursor-pointer transition-all ${
-                        dragOver ? "border-violet-500 bg-violet-500/10" : "border-white/[0.08] bg-white/[0.02] hover:border-white/[0.15] hover:bg-white/[0.04]"
+                      className={`flex flex-col items-center justify-center h-36 rounded-xl border-2 border-dashed cursor-pointer transition-all bg-white ${
+                        dragOver ? "border-violet-400 bg-violet-50" : "border-slate-300 hover:border-violet-300 hover:bg-slate-50"
                       }`}>
-                      <Upload className={`w-7 h-7 mb-2 ${dragOver ? "text-violet-400" : "text-zinc-600"}`} />
-                      <span className="text-sm text-zinc-400">Click or drag image here</span>
-                      <span className="text-[10px] text-zinc-600 mt-1">JPEG · PNG · WebP · GIF</span>
+                      <Upload className={`w-7 h-7 mb-2 ${dragOver ? "text-violet-500" : "text-slate-400"}`} />
+                      <span className="text-sm text-slate-600">Click or drag image here</span>
+                      <span className="text-[10px] text-slate-400 mt-1">JPEG · PNG · WebP · GIF</span>
                     </label>
                   ) : (
-                    <div className="relative rounded-xl overflow-hidden border border-white/[0.06]">
-                      {filePreview && <img src={filePreview} alt="Preview" className="w-full h-36 object-contain bg-black/50" />}
-                      <button onClick={clearFile} className="absolute top-2 right-2 p-1.5 rounded-lg bg-black/60 hover:bg-black/80 text-zinc-400 hover:text-white transition-all" aria-label="Remove file"><X className="w-4 h-4" /></button>
-                      <div className="p-2 bg-white/[0.03] text-[11px] text-zinc-400 truncate">{selectedFile.name} ({(selectedFile.size / 1024).toFixed(1)} KB)</div>
+                    <div className="relative rounded-xl overflow-hidden border border-slate-200 shadow-sm bg-white">
+                      {filePreview && <img src={filePreview} alt="Preview" className="w-full h-36 object-contain bg-slate-100" />}
+                      <button onClick={clearFile} className="absolute top-2 right-2 p-1.5 rounded-lg bg-white/80 hover:bg-white text-slate-600 hover:text-slate-900 shadow-sm transition-all" aria-label="Remove file"><X className="w-4 h-4" /></button>
+                      <div className="p-2 bg-slate-50 text-[11px] text-slate-600 truncate border-t border-slate-200">{selectedFile.name} ({(selectedFile.size / 1024).toFixed(1)} KB)</div>
                     </div>
                   )}
                 </div>
@@ -327,21 +327,21 @@ export default function FakeBusterDashboard() {
                   <input ref={fileInputRef} type="file" accept={ACCEPTED_AUDIO_TYPES} onChange={(e) => e.target.files?.[0] && pickFile(e.target.files[0])} className="hidden" id="audio-upload" />
                   {!selectedFile ? (
                     <label htmlFor="audio-upload" onDrop={onDrop} onDragOver={onDragOver} onDragLeave={onDragLeave}
-                      className={`flex flex-col items-center justify-center h-36 rounded-xl border-2 border-dashed cursor-pointer transition-all ${
-                        dragOver ? "border-violet-500 bg-violet-500/10" : "border-white/[0.08] bg-white/[0.02] hover:border-white/[0.15] hover:bg-white/[0.04]"
+                      className={`flex flex-col items-center justify-center h-36 rounded-xl border-2 border-dashed cursor-pointer transition-all bg-white ${
+                        dragOver ? "border-violet-400 bg-violet-50" : "border-slate-300 hover:border-violet-300 hover:bg-slate-50"
                       }`}>
-                      <Mic className={`w-7 h-7 mb-2 ${dragOver ? "text-violet-400" : "text-zinc-600"}`} />
-                      <span className="text-sm text-zinc-400">Upload voice note or recording</span>
-                      <span className="text-[10px] text-zinc-600 mt-1">MP3 · WAV · M4A · OGG · WebM</span>
+                      <Mic className={`w-7 h-7 mb-2 ${dragOver ? "text-violet-500" : "text-slate-400"}`} />
+                      <span className="text-sm text-slate-600">Upload voice note or recording</span>
+                      <span className="text-[10px] text-slate-400 mt-1">MP3 · WAV · M4A · OGG · WebM</span>
                     </label>
                   ) : (
-                    <div className="flex items-center gap-3 p-4 rounded-xl bg-white/[0.03] border border-white/[0.06]">
-                      <div className="p-3 rounded-lg bg-violet-500/10 shrink-0"><FileAudio className="w-5 h-5 text-violet-400" /></div>
+                    <div className="flex items-center gap-3 p-4 rounded-xl bg-white border border-slate-200 shadow-sm">
+                      <div className="p-3 rounded-lg bg-violet-100 shrink-0"><FileAudio className="w-5 h-5 text-violet-600" /></div>
                       <div className="flex-1 min-w-0">
-                        <p className="text-sm text-white truncate">{selectedFile.name}</p>
-                        <p className="text-[10px] text-zinc-500">{(selectedFile.size / 1024).toFixed(1)} KB</p>
+                        <p className="text-sm text-slate-900 truncate">{selectedFile.name}</p>
+                        <p className="text-[10px] text-slate-500">{(selectedFile.size / 1024).toFixed(1)} KB</p>
                       </div>
-                      <button onClick={clearFile} className="p-1.5 rounded-lg hover:bg-white/[0.06] text-zinc-500 hover:text-white transition-all" aria-label="Remove file"><X className="w-4 h-4" /></button>
+                      <button onClick={clearFile} className="p-1.5 rounded-lg hover:bg-slate-100 text-slate-400 hover:text-slate-700 transition-all" aria-label="Remove file"><X className="w-4 h-4" /></button>
                     </div>
                   )}
                 </div>
@@ -372,10 +372,10 @@ export default function FakeBusterDashboard() {
 
               {!result && !isAnalyzing ? (
                 /* Empty state */
-                <div className="absolute inset-0 flex flex-col items-center justify-center text-zinc-700">
-                  <ShieldCheck className="w-14 h-14 opacity-[0.07] mb-3 animate-float" />
-                  <p className="text-sm text-zinc-600">Awaiting input for analysis</p>
-                  <p className="text-[10px] text-zinc-700 mt-1">Paste text, upload a file, or try a sample</p>
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-slate-400">
+                  <ShieldCheck className="w-14 h-14 opacity-20 mb-3 animate-float" />
+                  <p className="text-sm text-slate-500">Awaiting input for analysis</p>
+                  <p className="text-[10px] text-slate-400 mt-1">Paste text, upload a file, or try a sample</p>
                 </div>
               ) : result ? (
                 /* Results */
@@ -384,11 +384,15 @@ export default function FakeBusterDashboard() {
                   <div className="flex items-start gap-4">
                     <ThreatGauge score={result.score} />
                     <div className="flex-1 pt-1">
-                      <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border text-sm font-semibold ${getVerdictDisplay(result.verdict).cls}`}>
+                      <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border text-sm font-semibold ${
+                        result.verdict === "SAFE" ? "text-emerald-700 bg-emerald-50 border-emerald-200" :
+                        result.verdict === "SCAM" ? "text-red-700 bg-red-50 border-red-200" :
+                        "text-amber-700 bg-amber-50 border-amber-200"
+                      }`}>
                         {result.verdict === "SAFE" || result.verdict === "ERROR" ? <CheckCircle2 className="w-4 h-4" /> : <AlertTriangle className="w-4 h-4" />}
                         {getVerdictDisplay(result.verdict).text}
                       </div>
-                      <p className="text-[10px] text-zinc-600 mt-2">
+                      <p className="text-[10px] text-slate-500 mt-2">
                         Analyzed via Amazon Bedrock (Claude 3 Haiku){result.transcript ? " + Amazon Transcribe + S3" : ""}
                       </p>
                     </div>
@@ -397,8 +401,8 @@ export default function FakeBusterDashboard() {
                   {/* Transcript (audio) */}
                   {result.transcript && (
                     <div>
-                      <h4 className="text-[10px] font-semibold text-zinc-500 uppercase tracking-widest mb-1.5">Transcription (Amazon Transcribe)</h4>
-                      <p className="text-xs text-zinc-400 bg-white/[0.03] p-3 rounded-lg border border-white/[0.06] italic leading-relaxed max-h-20 overflow-y-auto">
+                      <h4 className="text-[10px] font-semibold text-slate-500 uppercase tracking-widest mb-1.5">Transcription (Amazon Transcribe)</h4>
+                      <p className="text-xs text-slate-600 bg-slate-50 p-3 rounded-lg border border-slate-200 italic leading-relaxed max-h-20 overflow-y-auto">
                         &ldquo;{result.transcript}&rdquo;
                       </p>
                     </div>
@@ -406,17 +410,17 @@ export default function FakeBusterDashboard() {
 
                   {/* Explanation */}
                   <div>
-                    <h4 className="text-[10px] font-semibold text-zinc-500 uppercase tracking-widest mb-1.5">Analysis Report</h4>
-                    <p className="text-sm text-zinc-300 bg-white/[0.03] p-3 sm:p-4 rounded-lg border border-white/[0.06] leading-relaxed whitespace-pre-wrap">{result.explanation}</p>
+                    <h4 className="text-[10px] font-semibold text-slate-500 uppercase tracking-widest mb-1.5">Analysis Report</h4>
+                    <p className="text-sm text-slate-700 bg-slate-50 p-3 sm:p-4 rounded-lg border border-slate-200 leading-relaxed whitespace-pre-wrap">{result.explanation}</p>
                   </div>
 
                   {/* Flags */}
                   {result.flags?.length > 0 && (
                     <div>
-                      <h4 className="text-[10px] font-semibold text-zinc-500 uppercase tracking-widest mb-2">Red Flags Identified</h4>
+                      <h4 className="text-[10px] font-semibold text-slate-500 uppercase tracking-widest mb-2">Red Flags Identified</h4>
                       <div className="flex flex-wrap gap-1.5">
                         {result.flags.map((f, i) => (
-                          <span key={i} className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-[11px] font-medium bg-red-500/10 border border-red-500/20 text-red-300">
+                          <span key={i} className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-[11px] font-medium bg-red-50 border border-red-200 text-red-600">
                             <AlertTriangle className="w-3 h-3 shrink-0" />{f}
                           </span>
                         ))}
@@ -426,8 +430,8 @@ export default function FakeBusterDashboard() {
 
                   {/* Copy */}
                   <button onClick={copyReport}
-                    className="inline-flex items-center gap-1.5 text-[11px] text-zinc-500 hover:text-white px-3 py-1.5 rounded-lg hover:bg-white/[0.04] transition-all">
-                    {copied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
+                    className="inline-flex items-center gap-1.5 text-[11px] text-slate-500 hover:text-slate-900 px-3 py-1.5 rounded-lg hover:bg-slate-100 transition-all">
+                    {copied ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
                     {copied ? "Copied!" : "Copy Report"}
                   </button>
                 </div>
@@ -437,19 +441,19 @@ export default function FakeBusterDashboard() {
         </section>
 
         {/* ════════ How It Works ════════ */}
-        <section className="border-t border-white/[0.04] bg-white/[0.008]" id="how-it-works">
+        <section className="border-t border-slate-200 bg-white" id="how-it-works">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 py-14">
-            <h3 className="text-center text-[10px] font-semibold text-zinc-500 uppercase tracking-[0.2em] mb-8">How It Works</h3>
+            <h3 className="text-center text-[10px] font-semibold text-slate-500 uppercase tracking-[0.2em] mb-8">How It Works</h3>
             <div className="grid sm:grid-cols-3 gap-5">
               {[
                 { icon: <Upload className="w-6 h-6" />, title: "1. Upload", desc: "Paste suspicious text, upload a screenshot, or drop a voice recording." },
                 { icon: <Brain className="w-6 h-6" />, title: "2. AI Analysis", desc: "AWS Bedrock's Claude AI analyzes for psychological manipulation, phishing URLs, and scam patterns." },
                 { icon: <ShieldCheck className="w-6 h-6" />, title: "3. Get Protected", desc: "Receive an instant threat score, detailed report, and actionable red flags in under 5 seconds." },
               ].map((step, i) => (
-                <div key={i} className="glass rounded-xl p-5 text-center group hover:bg-white/[0.04] transition-all duration-300">
-                  <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-violet-600/20 to-cyan-500/20 text-violet-300 mb-3 group-hover:scale-110 transition-transform duration-300">{step.icon}</div>
-                  <h4 className="font-semibold text-white text-sm mb-1.5">{step.title}</h4>
-                  <p className="text-xs text-zinc-400 leading-relaxed">{step.desc}</p>
+                <div key={i} className="glass rounded-xl p-5 text-center group hover:shadow-md transition-all duration-300 bg-slate-50/50">
+                  <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-violet-100 to-cyan-100 text-violet-600 mb-3 group-hover:scale-110 transition-transform duration-300">{step.icon}</div>
+                  <h4 className="font-semibold text-slate-900 text-sm mb-1.5">{step.title}</h4>
+                  <p className="text-xs text-slate-500 leading-relaxed">{step.desc}</p>
                 </div>
               ))}
             </div>
@@ -457,23 +461,23 @@ export default function FakeBusterDashboard() {
         </section>
 
         {/* ════════ AWS Architecture ════════ */}
-        <section className="border-t border-white/[0.04]" id="architecture">
+        <section className="border-t border-slate-200" id="architecture">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 py-14">
-            <h3 className="text-center text-[10px] font-semibold text-zinc-500 uppercase tracking-[0.2em] mb-1.5">Built on AWS</h3>
-            <p className="text-center text-zinc-500 text-xs mb-8">Enterprise-grade cloud AI services</p>
+            <h3 className="text-center text-[10px] font-semibold text-slate-500 uppercase tracking-[0.2em] mb-1.5">Built on AWS</h3>
+            <p className="text-center text-slate-500 text-xs mb-8">Enterprise-grade cloud AI services</p>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
               {[
-                { name: "Amazon Bedrock", desc: "AI reasoning · Claude 3 Haiku", gradient: "from-violet-600/20 to-violet-500/5" },
-                { name: "Amazon S3", desc: "Secure media storage", gradient: "from-emerald-600/20 to-emerald-500/5" },
-                { name: "Amazon Transcribe", desc: "Speech-to-text engine", gradient: "from-cyan-600/20 to-cyan-500/5" },
-                { name: "AWS Amplify", desc: "Hosting & CI/CD", gradient: "from-amber-600/20 to-amber-500/5" },
+                { name: "Amazon Bedrock", desc: "AI reasoning · Claude 3 Haiku", gradient: "from-violet-100 to-violet-50" },
+                { name: "Amazon S3", desc: "Secure media storage", gradient: "from-emerald-100 to-emerald-50" },
+                { name: "Amazon Transcribe", desc: "Speech-to-text engine", gradient: "from-cyan-100 to-cyan-50" },
+                { name: "AWS Amplify", desc: "Hosting & CI/CD", gradient: "from-amber-100 to-amber-50" },
               ].map((svc) => (
-                <div key={svc.name} className="glass rounded-xl p-4 text-center hover:bg-white/[0.04] transition-all group">
+                <div key={svc.name} className="glass rounded-xl p-4 text-center hover:shadow-md transition-all group bg-white">
                   <div className={`inline-flex p-2.5 rounded-lg bg-gradient-to-br ${svc.gradient} mb-2.5 group-hover:scale-110 transition-transform duration-300`}>
-                    <Cloud className="w-5 h-5 text-zinc-300" />
+                    <Cloud className="w-5 h-5 text-slate-600" />
                   </div>
-                  <h4 className="text-xs sm:text-sm font-medium text-white">{svc.name}</h4>
-                  <p className="text-[10px] text-zinc-500 mt-0.5">{svc.desc}</p>
+                  <h4 className="text-xs sm:text-sm font-medium text-slate-900">{svc.name}</h4>
+                  <p className="text-[10px] text-slate-500 mt-0.5">{svc.desc}</p>
                 </div>
               ))}
             </div>
@@ -481,13 +485,13 @@ export default function FakeBusterDashboard() {
         </section>
 
         {/* ════════ Footer ════════ */}
-        <footer className="border-t border-white/[0.04] py-6">
+        <footer className="border-t border-slate-200 py-6 bg-slate-50">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center space-y-1">
-            <p className="text-[11px] text-zinc-600">
-              Built with ❤️ by <span className="text-zinc-400 font-medium">Team Gawds</span> for{" "}
-              <span className="text-zinc-400">AWS First Commit Hackathon</span> — Bharat Builds Tour 2026
+            <p className="text-[11px] text-slate-500">
+              Built with ❤️ by <span className="text-slate-800 font-medium">Team Gawds</span> for{" "}
+              <span className="text-slate-800">AWS First Commit Hackathon</span> — Bharat Builds Tour 2026
             </p>
-            <p className="text-[10px] text-zinc-700">Eshant Gupta · Aditya · Mayank · Arun Kumar Swami</p>
+            <p className="text-[10px] text-slate-400">Eshant Gupta · Aditya · Mayank · Arun Kumar Swami</p>
           </div>
         </footer>
       </div>
