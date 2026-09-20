@@ -75,8 +75,8 @@ FakeBuster provides a **dead-simple, one-click interface** where anyone — incl
 ### 1. Clone & Install
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/fakebuster.git
-cd fakebuster
+git clone https://github.com/eshant742/FakeBuster.git
+cd FakeBuster
 npm install
 ```
 
